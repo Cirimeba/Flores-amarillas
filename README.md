@@ -11,7 +11,16 @@ Antes de desplegar, edita **`lib/site-config.ts`**:
 - `hero` — título y subtítulo del encabezado.
 - `letter.paragraphs` — el texto de la carta.
 - `song` — letra y ruta del audio.
-- `gallery.items` — momentos especiales (emoji + descripción). Puedes reemplazar los emojis por imágenes reales editando `components/Gallery.tsx`.
+- `gallery.items` — momentos especiales. Cada elemento puede ser:
+  - `{ type: "photo", src: "/images/tu-foto.jpg", caption: "..." }`
+  - `{ type: "video", src: "/videos/tu-video.mp4", caption: "..." }` (se reproduce en silencio, en loop, al hacer scroll hasta él)
+  - `{ type: "emoji", emoji: "💛", caption: "..." }` (modo de respaldo sin archivo)
+
+  Coloca tus fotos en `public/images/` y tus videos en `public/videos/`. **Importante**: los videos deben estar en formato **H.264** (el códec más compatible). Muchos videos de iPhone usan HEVC/H.265, que no se reproduce en todos los navegadores (por ejemplo Chrome en Android). Si tienes `ffmpeg` instalado, conviértelos así:
+
+  ```bash
+  ffmpeg -i tu-video-original.mov -c:v libx264 -profile:v main -pix_fmt yuv420p -crf 25 -c:a aac -movflags +faststart public/videos/tu-video.mp4
+  ```
 - `footer.message` — mensaje final.
 
 ### Audio de la canción (opcional)

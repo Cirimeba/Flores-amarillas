@@ -43,14 +43,19 @@ export const siteConfig = {
   gallery: {
     heading: "Nuestros momentos",
     subheading: "Pequeños instantes que se volvieron eternos",
+    // type: "photo" usa src (imagen) · type: "video" usa src (mp4, autoplay silencioso en loop)
+    // type: "emoji" es el modo de respaldo si no tienes foto/video todavía
     items: [
-      { emoji: "🌻", caption: "El día que nos conocimos" },
-      { emoji: "💌", caption: "Nuestra primera cita" },
-      { emoji: "🌙", caption: "Esa noche que no queríamos que termine" },
-      { emoji: "🎉", caption: "Celebrando juntos" },
-      { emoji: "🚗", caption: "Ese viaje inolvidable" },
-      { emoji: "💛", caption: "Hoy, y todos los días" },
-    ],
+      { type: "photo", src: "/images/momento-1.jpg", caption: "Kitty feli mode 🎀" },
+      { type: "video", src: "/videos/momento-1.mp4", caption: "Nuestro momento favorito" },
+      { type: "video", src: "/videos/momento-2.mp4", caption: "Así nos reímos siempre" },
+      { type: "video", src: "/videos/momento-3.mp4", caption: "Un instante que no quiero olvidar" },
+      { type: "video", src: "/videos/momento-4.mp4", caption: "Contigo hasta en lo simple" },
+    ] as Array<
+      | { type: "photo"; src: string; caption: string }
+      | { type: "video"; src: string; caption: string }
+      | { type: "emoji"; emoji: string; caption: string }
+    >,
   },
 
   footer: {

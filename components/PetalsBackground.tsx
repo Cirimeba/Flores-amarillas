@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo } from "react";
+import { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 
 type Petal = {
@@ -74,7 +74,13 @@ function PetalShape({ size, kind }: { size: number; kind: 0 | 1 }) {
 }
 
 export default function PetalsBackground() {
-  const petals = useMemo(() => generatePetals(24), []);
+  // Los pétalos se generan solo en el cliente: usan posiciones aleatorias que
+  // no pueden coincidir entre el render del servidor y el del navegador.
+  const [petals, setPetals] = useState<Petal[]>([]);
+
+  useEffect(() => {
+    setPetals(generatePetals(24));
+  }, []);
 
   return (
     <div className="pointer-events-none fixed inset-0 z-0 overflow-hidden" aria-hidden="true">
