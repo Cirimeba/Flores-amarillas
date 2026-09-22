@@ -6,7 +6,7 @@ export const siteConfig = {
   myName: "Ciri",
 
   // Fecha en que empezó la relación (usada por el contador). Formato: "YYYY-MM-DDTHH:mm:ss"
-  startDate: "2026-07-15T00:00:00",
+  startDate: "2026-06-03T00:00:00",
 
   hero: {
     title: "Para mi lugar favorito en el mundo",
