@@ -16,7 +16,7 @@ Antes de desplegar, edita **`lib/site-config.ts`**:
 
 ### Audio de la canción (opcional)
 
-Por derechos de autor no se incluye el audio real de "Flores Amarillas". Si querés reproducción real:
+Por derechos de autor no se incluye el audio real de "Flores Amarillas". Si quieres reproducción real:
 
 1. Consigue el archivo (`.mp3`).
 2. Colócalo en `public/audio/flores-amarillas.mp3`.

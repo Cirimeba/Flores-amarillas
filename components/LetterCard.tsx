@@ -34,7 +34,7 @@ export default function LetterCard() {
               <div className="absolute inset-x-0 top-0 h-1/2 origin-top border-b border-gold-500/30 bg-gradient-to-b from-honey-300/70 to-transparent [clip-path:polygon(0_0,50%_65%,100%_0)]" />
               <span className="z-10 text-5xl transition-transform group-hover:scale-110">💌</span>
               <span className="z-10 mt-4 font-script text-2xl text-gold-700">
-                Tocá para abrir
+                Toca para abrir
               </span>
             </motion.button>
           ) : (
@@ -67,7 +67,7 @@ export default function LetterCard() {
                 transition={{ delay: 0.8 }}
                 className="mt-8 text-right font-script text-2xl text-gold-700"
               >
-                {siteConfig.letter.signature}, {siteConfig.myName} 🌼
+                {siteConfig.letter.signature} - {siteConfig.myName} 🌼
               </motion.p>
               <button
                 type="button"
