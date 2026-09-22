@@ -1,0 +1,45 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: linear-gradient(180deg, #fffdf7 0%, #fff6dc 40%, #ffedb8 100%);
+  color: #463217;
+}
+
+::selection {
+  background: #ffcf4d;
+  color: #332309;
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background: #fff6dc;
+}
+::-webkit-scrollbar-thumb {
+  background: #e3b04b;
+  border-radius: 999px;
+}
+
+.text-shimmer {
+  background: linear-gradient(90deg, #b87e0b 0%, #ffcf4d 25%, #b87e0b 50%, #ffcf4d 75%, #b87e0b 100%);
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+.card-elegant {
+  background: rgba(255, 253, 247, 0.75);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(227, 176, 75, 0.35);
+}
